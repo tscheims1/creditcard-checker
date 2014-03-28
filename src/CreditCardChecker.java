@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
@@ -9,10 +8,8 @@ public class CreditCardChecker {
 	
 	/**
 	 * @param args
-	 * @throws IOException 
-	 * @throws IllegalAccessException 
 	 */
-	public static void main(String[] args) throws IOException, IllegalAccessException {
+	public static void main(String[] args) {
 		Scanner scanner = new Scanner(new InputStreamReader(System.in));
 
 		do {
@@ -28,6 +25,7 @@ public class CreditCardChecker {
 
 				int iid = Integer.parseInt(creditcardnumber.substring(0, 6));
 				IssuerIdentification ii = BinlistClient.getIssuerIdentification(iid);
+				
 				if(ii != null)
 					System.out.printf("Your Card is %s (%s, %s) from the issuer %s of %s.\n", ii.getBrand(), ii.getCardType(), ii.getCardType(), ii.getBank(), ii.getCountryName());
 				else
