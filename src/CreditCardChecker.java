@@ -20,7 +20,7 @@ public class CreditCardChecker {
             	break;
             
             try {
-            	System.out.printf("Number %s is %s.", creditcardnumber, (Luhn.validate(creditcardnumber) ? "valid" : "invalid"));
+            	System.out.printf("Number %s is %s.", creditcardnumber, (Luhn.validate(creditcardnumber) ? "valid" : "invalid")+"\n");
             }
             catch(NumberFormatException ex) {
             	System.out.println("You've wrote an incorrect credit card number. Number should have the format: 6 digits, up to 12 alphanumerical signs, single digiti.");
